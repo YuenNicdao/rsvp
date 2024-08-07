@@ -1,29 +1,153 @@
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+html,
+body {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, #d1e8e9);
+  /* add monaco font */
+  font-family: 'Monaco', sans-serif;
+  background-image: url('img/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  position: relative;
+  width: 80%;
+  /* Adjust this value for desired width */
+  height: 80%;
+  /* Adjust this value for desired height */
+  border: 10px solid #577a92;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* add background image with decresead opacity from local source */
+
+
+
+
+}
+
+.floral_top1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  object-fit: cover;
+  /* Ensures the image covers the container and crops as needed */
+  z-index: 1;
+  /* Make sure the image appears above the container */
+}
+
+.floral_bot1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  object-fit: cover;
+  /* Ensures the image covers the container and crops as needed */
+  z-index: 1;
+  /* Make sure the image appears above the container */
+}
+
+.floral_bot2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  object-fit: cover;
+  /* Ensures the image covers the container and crops as needed */
+  z-index: 1;
+  /* Make sure the image appears above the container */
+}
+
+@media (min-width: 390px) {
+  body .floral_top1 {
+    width: 50%;
   }
-  
-  .container {
-    position: relative;
-    width: 80%; /* Adjust this value for desired width */
-    height: 80%; /* Adjust this value for desired height */
-    border: 10px solid #00b7ff;
-    overflow: hidden;
+  body .floral_bot2 {
+    width: 30%;
+  }
+
+  body .floral_bot1 {
+    width: 30%;
   }
 
   .container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the container and crops as needed */
-    z-index: 1; /* Make sure the image appears above the container */
+    width: 80%;
+  }
 }
-  
+
+@media (min-width: 1200px) {
+  body img {
+    width: 30%;
+  }
+
+  .container img {
+    width: 30%;
+  }
+}
+
+.container img {
+  height: auto;
+  z-index: 2;
+  margin-bottom: 50px;
+  /* align this on top-middle */
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 5px;
+  text-align: left;
+  width: 100%;
+  color: #351a4f;
+
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #351a4f;
+  ;
+  width: 100%;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #351a4f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+
+}
+
+button:hover {
+  background-color: #7f52a8;
+}
