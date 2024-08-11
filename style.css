@@ -9,9 +9,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #ffffff, #d1e8e9);
+  /* background: linear-gradient(135deg, #ffffff, #d1e8e9); */
   font-family: 'Monaco', sans-serif;
-  background-image: url('img/water.jpg');
+  background-image: url('img/water.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -65,22 +65,19 @@ body {
 
 @media (min-width: 320px) {
   body .floral_top1 {
-    width: 50%;
+    width: 60%;
   }
   body .floral_bot2 {
-    width: 30%;
+    width: 40%;
   }
 
   body .floral_bot1 {
-    width: 30%;
+    width: 40%;
   }
 
-  .container img {
-    width: 80%;
-  }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   body img {
     width: 30%;
   }
@@ -88,7 +85,7 @@ body {
   .con-top img {
     width: 30%;
   }
-}
+} */
 
 .container .con-top {
   z-index: 2;
@@ -104,10 +101,17 @@ body {
   justify-content: center;
   display: flex;
 }
-.con-top img{
+.con-top .title{
   position:absolute;
-  width: 80%;
+  width: 100%;
   bottom: 0;
+}
+
+.con-top .quote{
+  position:absolute;
+  top: 5%;
+  right: 5%;
+  width: 60%;
 }
 
 .container .con-mid {
@@ -133,7 +137,7 @@ label {
   display: block;
   text-align: left;
   color: #577a92;
-  font-size: 120%;
+  font-size: 130%;
   font-weight: bold;
 }
 
@@ -146,6 +150,8 @@ input {
   border-top-color: white;
   border-left-color: white;
   border-right-color: white;
+  /* enlarge the text */
+  font-size: 200%;
 }
 
 button {
@@ -157,7 +163,9 @@ button {
   cursor: pointer;
   transition: background-color 0.3s;
   width: 70%;
-  height: auto
+  height: 30%;
+  /* adjust text size */
+  font-size: 130%;
 
 }
 
@@ -176,9 +184,31 @@ button:hover {
   font-style: normal;
   color: rgb(168, 103, 19);
 }
+
+.con-bot .top-frame{
+  position: relative; 
+  bottom: 5%;
+  width: 70%;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  /* make it more lower from the button */
+  margin-top: 10%;
+}
+.con-bot .bot-frame{
+  transform: rotate(180deg);
+  position: relative; 
+  top: 0;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  margin-top: 5%;
+  width: 70%;
+
+  
+}
 .con-bot p{
   padding: 0 15%;
-}
-.con-bot img{
-  width: 70%;
+  color: #3b291e;
+  font-size: 130%;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
