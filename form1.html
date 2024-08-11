@@ -4,22 +4,46 @@
 <head>
   <title>Responsive Container</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <img src="img/floral_top1.png" alt="floral_top1" class="floral_top1">
   <div class="container">
-    <img src="img/title.png" alt="title">
-    <form>
-      <label for="name">First name:</label>
-      <input type="text" id="f_name" name="f_name" required>
-      <label for="attending">Last name:</label>
-      <input type="text" id="l_name" name="l_name" required>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="con-top">
+      <img src="img/title.png" alt="title">
+    </div>
+
+    <div class="con-mid">
+      <form>
+        <div class="form-input">
+          <label for="name">First name:</label>
+          <input type="text" id="f_name" name="f_name" required>
+        </div>
+        <div class="form-input">
+          <label for="attending">Last name:</label>
+          <input type="text" id="l_name" name="l_name" required>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="con-bot">
+      <img src="img/frame-top.PNG" alt="" style="position: relative; bottom: 5%;">
+      <p>We are preparing something special and personalized for each of our guests, with this, please make sure to RSVP
+        so
+        we can prepare yours and reserve your seat.</p>
+      <p>Kindly respond on or before October 15, 2024.</p>
+      <img src="img/frame-top.PNG" alt="" style=" transform: rotate(180deg); position: relative; top: 5%;">
+    </div>
+
   </div>
   <img src="img/floral_bot1.png" alt="floral_bot1" class="floral_bot1">
-  <img src="img/floral_bot2.png" alt="floral_bot2" class="floral_bot2">
+  <img src="img/floral_bot2.png" alt="floral_bot2" class="floral_bot2">/
+
 </body>
 
 </html>

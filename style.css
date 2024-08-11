@@ -10,9 +10,8 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #ffffff, #d1e8e9);
-  /* add monaco font */
   font-family: 'Monaco', sans-serif;
-  background-image: url('img/bg.png');
+  background-image: url('img/water.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,9 +20,7 @@ body {
 .container {
   position: relative;
   width: 80%;
-  /* Adjust this value for desired width */
   height: 80%;
-  /* Adjust this value for desired height */
   border: 10px solid #577a92;
   overflow: hidden;
   display: flex;
@@ -32,10 +29,6 @@ body {
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* add background image with decresead opacity from local source */
-
-
-
 
 }
 
@@ -45,9 +38,7 @@ body {
   left: 0;
   height: auto;
   object-fit: cover;
-  /* Ensures the image covers the container and crops as needed */
   z-index: 1;
-  /* Make sure the image appears above the container */
 }
 
 .floral_bot1 {
@@ -72,7 +63,7 @@ body {
   /* Make sure the image appears above the container */
 }
 
-@media (min-width: 390px) {
+@media (min-width: 320px) {
   body .floral_top1 {
     width: 50%;
   }
@@ -94,42 +85,63 @@ body {
     width: 30%;
   }
 
-  .container img {
+  .con-top img {
     width: 30%;
   }
 }
 
-.container img {
-  height: auto;
+.container .con-top {
   z-index: 2;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   /* align this on top-middle */
-  position: absolute;
-  top: 10%;
+  position: relative;
+  /* top: 10%;
   left: 50%;
-  transform: translateX(-50%);
-
+  transform: translateX(-50%); */
+  width: 100%;
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.con-top img{
+  position:absolute;
+  width: 80%;
+  bottom: 0;
 }
 
-form {
+.container .con-mid {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
+  width: 100%;
+  height: 20%;
+  padding: 5% 0%;
+}
+
+
+form{
+  position: relative;
+  top: 10%;
+  width: 50%;
 }
 
 label {
-  margin-bottom: 5px;
+  /* position: absolute; */
+  display: block;
   text-align: left;
-  width: 100%;
-  color: #351a4f;
-
+  color: #577a92;
+  font-size: 120%;
+  font-weight: bold;
 }
+
 
 input {
   padding: 10px;
   margin-bottom: 10px;
-  border: 3px solid #351a4f;
-  ;
+  border: 3px solid #577a92;
   width: 100%;
   border-top-color: white;
   border-left-color: white;
@@ -138,16 +150,35 @@ input {
 
 button {
   margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #351a4f;
+  padding: 10px 10px;
+  background-color: #577a92;
   color: white;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 100%;
+  width: 70%;
+  height: auto
 
 }
 
 button:hover {
   background-color: #7f52a8;
+}
+
+.container .con-bot{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 40%;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: rgb(168, 103, 19);
+}
+.con-bot p{
+  padding: 0 15%;
+}
+.con-bot img{
+  width: 70%;
 }
