@@ -1,4 +1,4 @@
-import { database } from "firebasejs";
+import {ref} from 'firebase';
 
 const dbRef = ref(database);
 onValue(dbRef, (snapshot) => {
