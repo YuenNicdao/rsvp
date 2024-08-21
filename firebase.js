@@ -30,9 +30,22 @@ async function getDbData() {
   return daArr[0];
 }
 
-var da = await getDbData();
-// convert da to array
+const form = document.getElementById('guest_form');
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
 
-console.log(da[1]);
+  var da = await getDbData();
 
+  const fname = document.getElementById('floatingInput').value;
+  const lname = document.getElementById('floatingPassword').value;   
+
+  const flatGuestsData = da.flat();
+
+  // Compare input values with myArray
+  if (flatGuestsData.includes(fname) && flatGuestsData.includes(lname)) {
+    console.log("Both values found in the array");
+  } else {
+    console.log("One or both values not found in the array");
+  }
+});
 

@@ -212,3 +212,31 @@ button:hover {
   font-weight: 400;
   font-style: normal;
 }
+
+#popup {
+  width: 500px; 
+  height: 300px; 
+}
+
+
+
+.popup-icon {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.retry_btn{
+  margin-top: 10px;
+  padding: 10px 10px;
+  background-color: white;
+  color: #577a92;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50%;
+  height: 20%;
+  /* adjust text size */
+  font-size: 130%;
+}

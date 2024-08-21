@@ -10,7 +10,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
     </div>
 
     <div class="con-mid">
-      <form>
+      <form id="guest_form">
         <div class="form-input">
           <label for="name">First name:</label>
           <input type="text" id="f_name" name="f_name" required>
@@ -43,6 +45,20 @@
         we can prepare yours and reserve your seat.</p>
       <p>Kindly respond on or before October 15, 2024.</p>
       <img src="img/frame-top.PNG" alt="" class="bot-frame">
+    </div>
+    <div id="popup" class="hidden" style="display: none; 
+      position: fixed; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%); 
+      background-color: #577a92; 
+      padding: 20px; 
+      border: 1px solid #ccc;
+      border-radius: 10px;
+       z-index: 999;">
+      <img src="img/nf.png" alt="Icon" class="popup-icon">
+      <p id="popup-text"></p>
+      <button class="retry_btn" id="retry_btn">Retry</button>
     </div>
 
   </div>

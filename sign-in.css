@@ -1,0 +1,130 @@
+html,
+body {
+  height: 100%;
+  background-image: url('img/water.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.floral_top1 {
+  position: absolute;
+  width: 18em;
+  top: 0;
+  left: 0;
+  height: auto;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.floral_bot1 {
+  position: absolute;
+  width: 12em;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  object-fit: cover;
+  /* Ensures the image covers the container and crops as needed */
+  z-index: 1;
+  /* Make sure the image appears above the container */
+}
+
+.floral_bot2 {
+  position: absolute;
+  width: 12em;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  object-fit: cover;
+  /* Ensures the image covers the container and crops as needed */
+  z-index: 1;
+  /* Make sure the image appears above the container */
+}
+
+.con-top .title{
+  position:absolute;
+  top: 18%;
+  width: 80%;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.con-top .quote{
+  position:absolute;
+  top: 12%;
+  right: 5%;
+  width: 45%;
+  z-index: 1;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-primary {
+  background-color: #577a92;
+  border-color: #007bff;
+}
+
+.con-bot{
+  position: absolute;
+  z-index: 2;
+  width: 80%;
+  bottom: 0;
+  margin-bottom: 10%;
+  color: rgb(168, 103, 19);
+  /* center this */
+  left: 50%;
+  transform: translateX(-50%);
+  /* align the text to center */
+  text-align: center;
+
+}
+
+.con-bot .top-frame{
+  position: relative; 
+  bottom: 5%;
+  width: 70%;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  /* make it more lower from the button */
+  /* margin-top: 10%; */
+  margin-bottom: 5%;
+}
+.con-bot .bot-frame{
+  transform: rotate(180deg);
+  position: relative; 
+  top: 0;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  /* margin-top: 5%; */
+  width: 70%;
+
+  
+}
+.con-bot p{
+  padding: 0 15%;
+  color: #3b291e;
+  font-size: 100%;
+  /* font-family: "Rubik", sans-serif; */
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  background-color: rgba(213, 212, 211, 0.5);
+}
