@@ -22,12 +22,25 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dbRef = ref(database);
 
+function toForm3(){
+  window.location.href = 'form3.html';
+}
+
 async function getDbData() {
   const snapshot = await get(dbRef);
   var daArr = Object.keys(snapshot.val()).map((key) => {
     return snapshot.val()[key];
   });
   return daArr[0];
+}
+
+
+function getInputs() {
+  const guestArray = [];
+  const guestInputFname = document.getElementById(`floatingInput`).value;
+  const guestInputLname = document.getElementById(`floatingPassword`).value;
+  guestArray.push(guestInputFname, guestInputLname);
+  return guestArray;
 }
 
 const form = document.getElementById('guest_form');
@@ -37,15 +50,40 @@ form.addEventListener('submit', async (event) => {
   var da = await getDbData();
 
   const fname = document.getElementById('floatingInput').value;
-  const lname = document.getElementById('floatingPassword').value;   
+  const lname = document.getElementById('floatingPassword').value;
 
-  const flatGuestsData = da.flat();
+  var guestRecord;
+  for (var i = 1; i < da.length; i++) {
+    if (da[i][0] === fname && da[i][1] === lname) {
+      guestRecord = da[i];
+      break;
+    }
+  }
+  if (guestRecord) {
+    // proceed to the next page with the guest record
+    if (guestRecord[2] == 0) {
+      const guestInputs = getInputs();
+      const guestFnameConf = document.getElementById('guest-fname-conf');
+      const guestLnameConf = document.getElementById('guest-lname-conf');
+      guestFnameConf.textContent = guestInputs[0];
+      guestLnameConf.textContent = guestInputs[1];
+      const modal = new bootstrap.Modal(document.getElementById('noAddGuestModal'));
+      modal.show();
+    }
+    else {
+      localStorage.setItem('guestRecord', JSON.stringify(guestRecord));
+      window.location.href = 'form_2.html';
+    }
 
-  // Compare input values with myArray
-  if (flatGuestsData.includes(fname) && flatGuestsData.includes(lname)) {
-    console.log("Both values found in the array");
+
   } else {
-    console.log("One or both values not found in the array");
+    const modal = new bootstrap.Modal(document.getElementById('noInviteModal'));
+    modal.show();
   }
 });
+
+const confirmBtn = document.getElementById('confirm-btn');
+confirmBtn.addEventListener('click', toForm3);
+
+
 

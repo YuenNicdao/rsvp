@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <script src="../assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.122.0">
+  <title>Jess and Milca</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap"
+    rel="stylesheet">
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      /* Prevent scrolling */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background-image: url('img/water.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .floral_top1 {
+      position: absolute;
+      top: 0;
+      max-width: 400px;
+      /* Adjust size as needed */
+      height: auto;
+      z-index: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .floral_bot1 {
+      position: absolute;
+      bottom: 0;
+      max-width: 400px;
+      /* Adjust size as needed */
+      height: auto;
+      z-index: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .form-signin {
+      max-width: 330px;
+      padding: 1rem;
+      z-index: 2;
+    }
+
+    .btn-primary {
+      background-color: #577a92;
+      border-color: #ffffff;
+    }
+
+    .style-script-regular {
+      font-family: "Style Script", cursive;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .raleway-intro {
+      font-family: "Raleway", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      /* font-size: .5rem; */
+    }
+
+    .guest-header-small {
+      font-size: 5vh;
+    }
+    .guest-caption-small {
+      font-size: 1.8vh;
+    }
+
+    .guest-header-medium {
+      font-size: 6vh;
+    }
+    .guest-caption-medium {
+      font-size: 2vh;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <!-- <link href="sign-in.css" rel="stylesheet"> -->
+</head>
+
+<body>
+
+  <!-- Decorative Images -->
+  <img src="img/floral_top1_2.png" alt="floral_top1" class="floral_top1">
+  <img src="img/floral_bot1_2.png" alt="floral_bot1" class="floral_bot1">
+
+  <div class="container text-center vh-100 d-flex justify-content-center align-items-center">
+    <div class="row align-items-start">
+      <!-- <div class="col"> -->
+      <h1 id="guest-header" style="z-index: 2;">Hi, <span class="style-script-regular" id="guest-fname-intro">guest</span>!</h1>
+      <p id="guest-caption" class="raleway-intro">We have reserved <span id="add-seats-intro">n</span> additional
+        seat(s)
+        for you.<br>Please write their names in the box provided below. If you don't have any additional guests,
+        simply leave the box blank.</p>
+      <!-- </div> -->
+      <main class=" form-signin w-100 m-auto row" id="form-sigin">
+        <form id="add-guest-form">
+          <!-- <img class="mb-4" src="img/icon.png" alt="" width="100" height="57"> -->
+          <div class="form-floating mb-2 col-12" id="Guest1">
+            <input type="text" class="form-control my-2" id="floatingGuest1" placeholder="Guest 1" value="">
+            <label for="floatingGuest1">Guest 1</label>
+          </div>
+          <div class="form-floating mb-2 col-12" id="Guest2">
+            <input type="text" class="form-control my-2" id="floatingGuest2" placeholder="Guest 2" value="">
+            <label for="floatingGuest2">Guest 2</label>
+          </div>
+          <div class="form-floating mb-2 col-12" id="Guest3">
+            <input type="text" class="form-control my-2" id="floatingGuest3" placeholder="Guest 3" value="">
+            <label for="floatingGuest3">Guest 3</label>
+          </div>
+          <div class="form-floating mb-2 col-12" id="Guest4">
+            <input type="text" class="form-control my-2" id="floatingGuest4" placeholder="Guest 4" value="">
+            <label for="floatingGuest4">Guest 4</label>
+          </div>
+          <div class="form-floating mb-2 col-12" id="Guest5">
+            <input type="text" class="form-control my-2" id="floatingGuest5" placeholder="Guest 5" value="">
+            <label for="floatingGuest5">Guest 5</label>
+          </div>
+
+          <button class="btn btn-primary w-100 py-2" type="submit">Submit</button>
+        </form>
+      </main>
+    </div>
+
+
+    <!-- TODO -->
+    <!-- in the confirmation modal add 3 buttons for main guest will come with or without -->
+
+  </div>
+
+  <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Please confirm.</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Main guest name: <br><b><span id="guest-fname-conf">fname</span> <span
+                id="guest-lname-conf">lname</span></b></p>
+          <hr>
+          <p><b>Additional guest(s):</b></p>
+          <ul id="additional-guests-list"></ul>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button> -->
+          <div class="d-flex flex-column align-items-start w-100">
+            <div class="d-flex justify-content-end w-100 mb-2">
+              <button type="button" class="btn btn-primary me-2 w-50" id="confirm-btn">Confirm</button>
+              <button type="button" class="btn btn-secondary w-50" data-bs-dismiss="modal">Cancel</button>
+            </div>
+            <div class="w-100">
+              <button type="button" class="btn btn-danger w-100" id="confirm-btn-not">I can't come but my additional
+                guest(s) will</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="form2-script.js"></script>
+</body>
+
+</html>

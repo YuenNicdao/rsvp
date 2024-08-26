@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jess and Milca</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
+
+  <style>
+    /* Prevent scrolling and ensure the body takes the full viewport height */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      /* Prevent scrolling */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background-image: url('img/water.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+
+    }
+
+    /* Positioning decorative images */
+    .floral_top1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30vh;
+      /* Adjust size as needed */
+      height: auto;
+      z-index: 0;
+    }
+
+    .floral_bot1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 15vh;
+      /* Adjust size as needed */
+      height: auto;
+      z-index: 0
+    }
+
+    .floral_bot2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 15vh;
+      /* Adjust size as needed */
+      height: auto;
+      z-index: 0
+    }
+
+    .con-top {
+      width: 90%;
+      display: block;
+      text-align: center;
+    }
+
+    .con-top .title {
+      max-width: 30vh;
+      height: auto;
+      display: block;
+    }
+
+    .dekko-regular {
+      font-family: "Dekko", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Decorative Images -->
+  <img src="img/floral_top1.png" alt="floral_top1" class="floral_top1 img-fluid">
+  <img src="img/floral_bot1.png" alt="floral_bot1" class="floral_bot1 img-fluid">
+  <img src="img/floral_bot2.png" alt="floral_bot2" class="floral_bot2 img-fluid">
+
+  <div class="container">
+    <div class="row">
+      <!-- Top Content -->
+      <div class="con-top mb-3 mx-auto">
+
+        <img src="img/tnx.png" alt="title" class="title img-fluid mx-auto">
+        <p class="dekko-regular">We have received your response. If you have any questions or need further information, please feel free to
+          contact us.</p>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

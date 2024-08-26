@@ -5,6 +5,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* unsrollabe */
+  overflow: hidden;
 }
 
 .floral_top1 {
@@ -41,10 +43,11 @@ body {
   /* Make sure the image appears above the container */
 }
 
+
 .con-top .title{
   position:absolute;
   top: 18%;
-  width: 80%;
+  width: 20em;
   z-index: 1;
   left: 50%;
   transform: translateX(-50%);
@@ -54,7 +57,7 @@ body {
   position:absolute;
   top: 12%;
   right: 5%;
-  width: 45%;
+  width: 13em;
   z-index: 1;
 }
 

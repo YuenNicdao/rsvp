@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <script src="../assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.122.0">
+  <title>Jess and Milca</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="sign-in.css" rel="stylesheet">
+</head>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+  <img src="img/floral_top1.png" alt="floral_top1" class="floral_top1">
+  <div class="con-top">
+    <img src="img/qoute.png" alt="quote" class="quote">
+    <img src="img/title.png" alt="title" class="title">
+  </div>
+  <main class="form-signin w-100 m-auto">
+    <form id="guest_form">
+      <!-- <img class="mb-4" src="img/icon.png" alt="" width="100" height="57"> -->
+      <h1 class="h6 mb-2 fw-light">Please enter your name</h1>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" placeholder="First name" required>
+        <label for="floatingInput">First Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" placeholder="Last name" required>
+        <label for="floatingPassword">Last Name</label>
+      </div>
+      <button class="btn btn-primary w-100 py-2" type="submit">Search</button>
+    </form>
+  </main>
+  <div class="con-bot">
+    <img src="img/frame-top.PNG" alt="" class="top-frame">
+    <p>We are preparing something special and personalized for each of our guests, with this, please make sure to RSVP
+      so
+      we can prepare yours and reserve your seat.</p>
+    <p>Kindly respond on or before October 15, 2024.</p>
+    <img src="img/frame-top.PNG" alt="" class="bot-frame">
+  </div>
+
+  <img src="img/floral_bot1.png" alt="floral_bot1" class="floral_bot1">
+  <img src="img/floral_bot2.png" alt="floral_bot2" class="floral_bot2">
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">It seems you're not on our guest list. </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Please ensure your name is spelled correctly and that you use your legal name. <br> Contact us for more details. Thank you! </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="firebase.js" type="module"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ------------------------------------------------------ -->
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jess and Milca</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Prevent scrolling and ensure the body takes the full viewport height */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      /* Prevent scrolling */
+    }
+
+    body {
+      /* display: flex; */
+      /* justify-content: center;
+      align-items: center; */
+      position: relative;
+      background-image: url('img/water.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    /* Positioning decorative images */
+    .floral_top1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25vh;
+      /* Adjust size as needed */
+      height: auto;
+    }
+
+    .floral_bot1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 15vh;
+      /* Adjust size as needed */
+      height: auto;
+    }
+
+    .floral_bot2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 15vh;
+      /* Adjust size as needed */
+      height: auto;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .con-top,
+    .con-bot {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .con-top img,
+    .con-bot img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .form-signin {
+      width: 100%;
+      max-width: 300px;
+      /* Adjust to fit mobile screen */
+    }
+
+    /* Ensuring elements do not take too much space */
+    .con-top,
+    .con-bot,
+    .form-signin {
+      flex: 0 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Decorative Images -->
+  <img src="img/floral_top1.png" alt="floral_top1" class="floral_top1 img-fluid">
+  <img src="img/floral_bot1.png" alt="floral_bot1" class="floral_bot1 img-fluid">
+  <img src="img/floral_bot2.png" alt="floral_bot2" class="floral_bot2 img-fluid">
+
+  <div class="container">
+    <div class="content">
+      <!-- Top Content -->
+      <div class="con-top mb-3">
+        <img src="img/qoute.png" alt="quote" class="img-fluid mb-2">
+        <img src="img/title.png" alt="title" class="img-fluid">
+      </div>
+
+      <!-- Form -->
+      <main class="form-signin">
+        <form id="guest_form">
+          <h1 class="h6 mb-3 fw-light">Please enter your name</h1>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="First name" required>
+            <label for="floatingInput">First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Last name" required>
+            <label for="floatingPassword">Last Name</label>
+          </div>
+          <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+        </form>
+      </main>
+
+      <!-- Bottom Content -->
+      <div class="con-bot mt-3">
+        <img src="img/frame-top.PNG" alt="" class="img-fluid mb-2">
+        <p>We are preparing something special and personalized for each of our guests. Please make sure to RSVP so we
+          can prepare yours and reserve your seat.</p>
+        <p>Kindly respond on or before October 15, 2024.</p>
+        <img src="img/frame-top.PNG" alt="" class="img-fluid mt-2">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
