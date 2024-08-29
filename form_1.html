@@ -133,6 +133,15 @@
     .form-signin {
       flex: 0 0 auto;
     }
+
+    .custom-popover {
+      --bs-popover-max-width: 200px;
+      --bs-popover-border-color: var(--bd-violet-bg);
+      --bs-popover-header-bg: var(--bd-violet-bg);
+      --bs-popover-header-color: var(--bs-white);
+      --bs-popover-body-padding-x: 1rem;
+      --bs-popover-body-padding-y: .5rem;
+    }
   </style>
 </head>
 
@@ -223,7 +232,9 @@
           <button type="button" class="btn btn-primary">Understood</button> -->
           <div class="d-flex flex-column align-items-start w-100">
             <div class="w-100 mb-2">
-              <button type="button" class="btn btn-primary w-100" id="confirm-btn">Yes, I will
+              <button type="button" class="btn btn-primary w-100" id="confirm-btn"
+                data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover"
+                data-bs-custom-class="custom-popover" data-bs-title="Custom popover">Yes, I will
                 come.</button>
               <!-- <button type="button" class="btn btn-secondary w-50" data-bs-dismiss="modal">Cancel</button> -->
             </div>
