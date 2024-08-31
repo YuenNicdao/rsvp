@@ -134,13 +134,77 @@
       flex: 0 0 auto;
     }
 
-    .custom-popover {
+    /* .custom-popover {
       --bs-popover-max-width: 200px;
       --bs-popover-border-color: var(--bd-violet-bg);
       --bs-popover-header-bg: var(--bd-violet-bg);
       --bs-popover-header-color: var(--bs-white);
       --bs-popover-body-padding-x: 1rem;
       --bs-popover-body-padding-y: .5rem;
+    } */
+
+    .popover {
+      background-color: #f8f9fa;
+      border: 2px solid #577a92;
+      border-radius: 10px;
+
+    }
+
+    .popover-header {
+      background-color: #577a92;
+      color: white;
+      font-weight: bold;
+    }
+
+    .popover-body {
+      color: #333;
+      font-size: 14px;
+    }
+
+    /* Ensure light mode styles even if the system prefers dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-image: url('img/water.png') !important;
+        background-color: #ffffff !important;
+      }
+
+      .container {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+        /* Light background */
+      }
+
+      .floral_top1,
+      .floral_bot1,
+      .floral_bot2 {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+      }
+
+      .btn-primary {
+        background-color: #577a92 !important;
+        border-color: #ffffff !important;
+      }
+
+      .con-bot p {
+        color: #3b291e !important;
+        background-color: rgba(213, 212, 211, 0.5) !important;
+      }
+
+      .popover {
+        background-color: #f8f9fa !important;
+        border: 2px solid #577a92 !important;
+        border-radius: 10px !important;
+      }
+
+      .popover-header {
+        background-color: #577a92 !important;
+        color: white !important;
+        font-weight: bold !important;
+      }
+
+      .popover-body {
+        color: #333 !important;
+        font-size: 14px !important;
+      }
     }
   </style>
 </head>
@@ -172,7 +236,8 @@
             <input type="text" class="form-control" id="floatingPassword" placeholder="Last name" required>
             <label for="floatingPassword">Last Name</label>
           </div>
-          <button class="btn btn-primary w-100 py-2" type="submit">Search</button>
+          <button class="btn btn-primary w-100 py-2" type="submit" data-bs-toggle="popover" data-bs-placement="top"
+            data-bs-custom-class="custom-popover" id="form-btn">Search</button>
         </form>
       </main>
     </div>
@@ -225,16 +290,16 @@
               <span id="guest-lname-conf">lname</span></b>
           </p>
           <hr>
-          <p><b>No additional guest(s):</b></p>
+          <p><b>No additional guest(s)</b></p>
         </div>
         <div class="modal-footer">
           <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Understood</button> -->
           <div class="d-flex flex-column align-items-start w-100">
             <div class="w-100 mb-2">
-              <button type="button" class="btn btn-primary w-100" id="confirm-btn"
-                data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover"
-                data-bs-custom-class="custom-popover" data-bs-title="Custom popover">Yes, I will
+              <button type="button" class="btn btn-primary w-100" id="confirm-btn" data-bs-toggle="popover"
+                data-bs-placement="top" data-bs-content="Top popover" data-bs-custom-class="custom-popover"
+                data-bs-title="Custom popover">Yes, I will
                 come.</button>
               <!-- <button type="button" class="btn btn-secondary w-50" data-bs-dismiss="modal">Cancel</button> -->
             </div>

@@ -1,26 +1,48 @@
+// Import the functions you need from the SDKs you need
+// import { getDatabase, ref, onValue } from "../firebase/database";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js'
+import { getDatabase, ref, push, set } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js'
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyD2gN3f9Ibrf9g9pZzaj5yo3BhcU4dNyFw",
+  authDomain: "jessandmilca.firebaseapp.com",
+  databaseURL: "https://jessandmilca-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "jessandmilca",
+  storageBucket: "jessandmilca.appspot.com",
+  messagingSenderId: "227565671742",
+  appId: "1:227565671742:web:3c55018c561d8fb5fe886f"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
 const guestData = JSON.parse(localStorage.getItem("guestRecord"));
+console.log(guestData);
 
 const guestFirstName = document.getElementById("guest-fname-intro");
 const guestAddSeats = document.getElementById("add-seats-intro");
-guestFirstName.textContent = guestData[0];
-guestAddSeats.textContent = guestData[2];
+guestFirstName.textContent = guestData['alias'];
+guestAddSeats.textContent = guestData['addGuestNum'];
 
 const guestFnameConf = document.getElementById('guest-fname-conf');
 const guestLnameConf = document.getElementById('guest-lname-conf');
-guestFnameConf.textContent = guestData[0];
-guestLnameConf.textContent = guestData[1];
+guestFnameConf.textContent = guestData['fName'];
+guestLnameConf.textContent = guestData['lName'];
 
-function toForm3(){
+function toForm3() {
     window.location.href = 'form3.html';
-  }
+}
 
 function setPreGuestData() {
-    if (guestData[3]) {
-        for (let i = 0; i < guestData[3].length; i++) {
+    if (guestData['addGuestList']) {
+        for (let i = 0; i < guestData['addGuestList'].length; i++) {
             const setGuest = document.getElementById(`floatingGuest${i + 1}`);
-            setGuest.value = guestData[3][i];
+            setGuest.value = guestData['addGuestList'][i];
         }
     }
 }
@@ -36,10 +58,10 @@ function displayInputs(number) {
     for (let i = 1; i <= number; i++) {
         document.getElementById('Guest' + i).style.display = 'block';
     }
-    header = document.getElementById('guest-header');
-    caption = document.getElementById('guest-caption');
+    var header = document.getElementById('guest-header');
+    var caption = document.getElementById('guest-caption');
     if (number === 5) {
-    // add a class to the form to make it smaller
+        // add a class to the form to make it smaller
         header.classList.add('guest-header-small');
         caption.classList.add('guest-caption-small');
     }
@@ -49,6 +71,15 @@ function displayInputs(number) {
     }
 }
 
+function capitalizeEachWord(str) {
+    return str
+        .split(' ')  // Split the string by spaces into an array of words
+        .map(word =>
+            word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()  // Capitalize first letter and make the rest lowercase
+        )
+        .join(' ');  // Join the array back into a single string
+}
+
 function getInputs() {
     const guestArray = [];
 
@@ -56,13 +87,13 @@ function getInputs() {
     for (let i = 1; i <= 5; i++) {
         const guestInput = document.getElementById(`floatingGuest${i}`).value;
         if (guestInput) {
-            guestArray.push(guestInput);
+            guestArray.push(capitalizeEachWord(guestInput));
         }
     }
     return guestArray;
 }
 
-displayInputs(guestData[2]);
+displayInputs(guestData['addGuestNum']);
 setPreGuestData();
 const modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
 
@@ -93,7 +124,60 @@ form.addEventListener('submit', function (event) {
 });
 
 const confirmBtn = document.getElementById('confirm-btn');
-confirmBtn.addEventListener('click', toForm3);
-
 const confirmBtnNot = document.getElementById('confirm-btn-not');
-confirmBtnNot.addEventListener('click', toForm3);
+
+confirmBtn.addEventListener('click', function (e) {
+    confirmBtn.disabled = true;
+    confirmBtnNot.disabled = true;
+    const guestInputs = getInputs();
+    const dataPath = 'FinalGuests/'
+
+    // Add the new guest to the database
+    const newGuestRef = push(ref(database, dataPath));
+
+    set(newGuestRef, {
+        'fName': guestData['fName'],
+        'lName': guestData['lName'],
+        'status': 'Submitted',
+        'answer': 'Yes',
+        'addGuestList': guestInputs
+    })
+    .then(() => {
+        console.log('Data saved successfully.');
+        toForm3();
+    })
+    .catch((error) => {
+        console.error('Data could not be saved:', error);
+        alert('Error querying data: Try refreshing your browser', error);
+        raise('Error querying data:', error);
+    });
+
+});
+
+confirmBtnNot.addEventListener('click', function (e) {
+    confirmBtn.disabled = true;
+    confirmBtnNot.disabled = true;
+    const guestInputs = getInputs();
+    const dataPath = 'FinalGuests/'
+
+    // Add the new guest to the database
+    const newGuestRef = push(ref(database, dataPath));
+
+    set(newGuestRef, {
+        'fName': guestData['fName'],
+        'lName': guestData['lName'],
+        'status': 'Submitted',
+        'answer': 'NoButGuestsWill',
+        'addGuestList': guestInputs
+    })
+    .then(() => {
+        console.log('Data saved successfully.');
+        toForm3();
+    })
+    .catch((error) => {
+        console.error('Data could not be saved:', error);
+        alert('Error querying data: Try refreshing your browser', error);
+        raise('Error querying data:', error);
+    });
+
+});

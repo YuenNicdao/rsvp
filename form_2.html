@@ -95,6 +95,7 @@
     .guest-header-small {
       font-size: 5vh;
     }
+
     .guest-caption-small {
       font-size: 1.8vh;
     }
@@ -102,8 +103,44 @@
     .guest-header-medium {
       font-size: 6vh;
     }
+
     .guest-caption-medium {
       font-size: 2vh;
+    }
+
+    /* Ensuring light mode styles even if the system prefers dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-image: url('img/water.png') !important;
+        background-color: #ffffff !important;
+      }
+
+      .floral_top1,
+      .floral_bot1 {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+      }
+
+      .btn-primary {
+        background-color: #577a92 !important;
+        border-color: #ffffff !important;
+      }
+
+      .form-signin {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+        color: #000000 !important;
+      }
+
+      .style-script-regular,
+      .raleway-intro {
+        color: #000000 !important;
+      }
+
+      .guest-header-small,
+      .guest-caption-small,
+      .guest-header-medium,
+      .guest-caption-medium {
+        color: #000000 !important;
+      }
     }
   </style>
 
@@ -121,7 +158,8 @@
   <div class="container text-center vh-100 d-flex justify-content-center align-items-center">
     <div class="row align-items-start">
       <!-- <div class="col"> -->
-      <h1 id="guest-header" style="z-index: 2;">Hi, <span class="style-script-regular" id="guest-fname-intro">guest</span>!</h1>
+      <h1 id="guest-header" style="z-index: 2;">Hi, <span class="style-script-regular"
+          id="guest-fname-intro">guest</span>!</h1>
       <p id="guest-caption" class="raleway-intro">We have reserved <span id="add-seats-intro">n</span> additional
         seat(s)
         for you.<br>Please write their names in the box provided below. If you don't have any additional guests,
@@ -201,7 +239,7 @@
 
 
   <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./form2-script.js"></script>
+  <script src="./form2-script.js" type="module"></script>
 </body>
 
 </html>

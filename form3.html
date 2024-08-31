@@ -92,6 +92,37 @@
       font-weight: 400;
       font-style: normal;
     }
+
+    /* Ensure light mode styles even if the system prefers dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-image: url('img/water.png') !important;
+        background-color: #ffffff !important;
+      }
+
+      .container {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+        /* Light background */
+      }
+
+      .floral_top1,
+      .floral_bot1,
+      .floral_bot2 {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+      }
+
+      .con-top {
+        color: #000000 !important;
+      }
+
+      .con-top .title {
+        color: #000000 !important;
+      }
+
+      .dekko-regular {
+        color: #000000 !important;
+      }
+    }
   </style>
 </head>
 
@@ -107,7 +138,8 @@
       <div class="con-top mb-3 mx-auto">
 
         <img src="img/tnx.png" alt="title" class="title img-fluid mx-auto">
-        <p class="dekko-regular">We have received your response. If you have any questions or need further information, please feel free to
+        <p class="dekko-regular">We have received your response. If you have any questions or need further information,
+          please feel free to
           contact us.</p>
       </div>
     </div>
