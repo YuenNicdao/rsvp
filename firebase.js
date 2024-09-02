@@ -85,7 +85,7 @@ formSubmit.addEventListener('submit', async function (event) {
       var popover = new bootstrap.Popover(submitButton, {
         trigger: 'manual',
         container: 'body',
-        content: 'It seems this name is already in our records. If you believe this is an error or need assistance, please contact us for further assistance.',
+        content: 'It appears that you have already responded to this RSVP. If you have any concerns or need to make changes, please contact us directly.',
         title: 'Name Already Registered',
       });
 
